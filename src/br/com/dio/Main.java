@@ -131,17 +131,39 @@ public class Main {
         game.displayBoard();
     }
 
+    private static int getNumberValid() {
+        int n;
+        while (true) {
+            if (scanner.hasNextInt()) {
+                n = scanner.nextInt();
+                break;
+            } else {
+                System.out.println("Entrada inválida. Por favor, digite um número inteiro.");
+                scanner.next();
+            }
+        }
+        return n;
+    }
+
+    private static int getCol() {
+        System.out.print("Informe o número da coluna: ");
+        return getNumberValid();
+    }
+
+    private static int getRow() {
+        System.out.print("Informe o número da linha: ");
+        return getNumberValid();
+    }
+
     private static void inputNumber() {
         if (!game.isGameInitialized()) {
             System.err.println("O jogo não foi iniciado");
             return;
         }
 
-        System.out.println("Informe a coluna que em que o número será inserido");
-        var col = scanner.nextInt();
-        System.out.println("Informe a linha que em que o número será inserido");
-        var row = scanner.nextInt();
-        System.out.printf("Informe o número que vai entrar na posição [%s,%s]\n", col, row);
+        int col = getCol();
+        int row = getRow();
+        System.out.printf("Informe o número que vai entrar na posição [%s,%s]: ", col, row);
         var value = scanner.nextInt();
 
         game.addCell(col, row, value);
@@ -153,10 +175,8 @@ public class Main {
             return;
         }
 
-        System.out.println("Informe a coluna que em que o número será removido");
-        var col = scanner.nextInt();
-        System.out.println("Informe a linha que em que o número será removido");
-        var row = scanner.nextInt();
+        int col = getCol();
+        int row = getRow();
 
         game.removeCell(row, col);
     }
