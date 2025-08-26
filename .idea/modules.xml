@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SUDOKU-JAVA.iml" filepath="$PROJECT_DIR$/.idea/SUDOKU-JAVA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SUDOKU-JAVA.iml" filepath="$PROJECT_DIR$/SUDOKU-JAVA.iml" />
     </modules>
   </component>
 </project>
